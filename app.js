@@ -79,6 +79,10 @@ app.get('/getSurvey', function (req, res) {
     res.json(shuffle(survey));
 });
 
+app.get('/', function (req, res) {
+    res.json("This an API for serving example JSON responses");
+});
+
 
 ///Error Handler
 app.use((error, req, res, next) => {
