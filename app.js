@@ -100,6 +100,19 @@ app.get('/', function (req, res) {
     res.json("This an API for serving example JSON responses");
 });
 
+console.log("--------------------this is dev part of campaignManager------------------");
+
+const mongoose = require('mongoose');
+const Survey = require('./models/Survey')
+
+mongoose.connect(`mongodb+srv://fahim:fahim@cluster0.li6l5.mongodb.net/<dbname>?retryWrites=true&w=majority`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+});
+
+mongoose.Promise = global.Promise;
 
 let demoSurvey = {
     "name": "testSurvey",
@@ -215,16 +228,28 @@ let demoSurvey = {
 }
 
 app.get('/demo-survey', function (req, res) {
-    res.status(200).send(demoSurvey);
+    res.status(200).json(demoSurvey);
+});
+
+app.post('/post-survey', async (req, res) => {
+
+    try {
+        const survey = new Survey({ "reqBody": req.body });
+        const result = await survey.save();
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(404).json({ message: err.name })
+    }
+
 });
 
 
 ///Error Handler
 app.use((error, req, res, next) => {
-    console.log(error);
     const status = error.statusCode || 500;
     const message = error.message;
     const data = error.data;
+    log({ message: message, data: data });
     res.status(status).json({ message: message, data: data });
 });
 
