@@ -124,7 +124,7 @@ let demoSurvey = {
                 "id": 3,
                 "question": "দয়া করে আপনার মোবাইল নম্বরটি বলুন",
                 "type": "numberInput",
-                "options": "",
+                "options": null,
                 "required": false
             },
             {
