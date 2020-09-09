@@ -167,7 +167,6 @@ let demoSurvey = {
                 "franchaise": "15",
                 "SOB": "16",
                 "required": true,
-                "referTo": "7"
             },
             {
                 "id": 7,
@@ -211,7 +210,7 @@ let demoSurvey = {
             {
                 "id": 10,
                 "question": "ভোক্তা কি পিটিআর(PTR) গ্রহণ করেছেন  ?",
-                "type": "multipleChoice",
+                "type": "multipleChoice+condition",
                 "options": ["yes", "no"],
                 "yes": "11",
                 "no": "12",
