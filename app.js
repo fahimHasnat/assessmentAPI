@@ -124,67 +124,89 @@ let demoSurvey = {
                 "question": "দয়া করে আপনার নাম বলুন",
                 "type": "textInput",
                 "options": null,
-                "required": true
+                "required": true,
+                "referTo": "2"
             },
             {
                 "id": 2,
                 "question": "দয়া করে আপনার ঠিকানা বলুন",
                 "type": "textInput",
                 "options": null,
-                "required": false
+                "required": false,
+                "referTo": "3"
             },
             {
                 "id": 3,
                 "question": "দয়া করে আপনার মোবাইল নম্বরটি বলুন",
                 "type": "numberInput",
                 "options": null,
-                "required": false
+                "required": false,
+                "referTo": "4"
             },
             {
                 "id": 4,
                 "question": "দয়া করে আপনার বয়স বলুন",
                 "type": "dropdown",
                 "options": ["18 to 20 years", "21 to 25 years", "26 to 30 years", "31 to 35 years", "36 to 40 years", "41 to 45 years", "46 to 50 years", "51 to 55 years", "55+ years"],
-                "required": true
+                "required": true,
+                "referTo": "5"
             },
             {
                 "id": 5,
                 "question": "দয়া করে আপনার পেশা বলুন",
                 "type": "dropdown",
                 "options": ["Service", "Student", "Business", "Puller", "Day labor", "Other"],
-                "required": true
+                "required": true,
+                "referTo": "6"
             },
             {
                 "id": 6,
                 "question": "আপনি প্রধানত কোন ব্র্যান্ডের সিগারেট ধূমপান করেন",
                 "type": "dropdown+condition",
                 "options": ["franchise", "SOB"],
-                "franchaise": ['bnh_sf', 'bnh_bg', 'bnh_sw', 'bnh_p', 'jpgl', 'jpgl_sp', 'jpgl_sw', 'capstan', 'srft', 'star_next', 'royals_gold', 'royals_next', 'royals_ls', 'pilot', 'derby', 'derby_style', 'hollywood'],
-                "SOB": ["marlboro advance", "Marlboro FF", "Marlboro Gold", "Navy", 'Sheikh FF', "Marise", "Castle", "Rally", "Real", "Winston Blue", "Winston Red", "LD", "Others"],
-                "required": true
+                "franchaise": "15",
+                "SOB": "16",
+                "required": true,
+                "referTo": "7"
             },
             {
                 "id": 7,
                 "question": "আপনি কতদিন যাবত এই ব্র্যান্ডটি ধূমপান করছেন?",
                 "type": "dropdown",
                 "options": ['Less than 6 Months', '6 Months to 1 year', '1 year to 2 years', '2+ years'],
-                "required": true
+                "required": true,
+                "referTo": "8"
             },
             {
                 "id": 8,
                 "question": "আপনার দ্বিতীয় পছন্দের ব্র্যান্ড কোনটি ?",
                 "type": "dropdown+condition",
                 "options": ["franchise", "SOB"],
-                "franchaise": ['bnh_sf', 'bnh_bg', 'bnh_sw', 'bnh_p', 'jpgl', 'jpgl_sp', 'jpgl_sw', 'capstan', 'srft', 'star_next', 'royals_gold', 'royals_next', 'royals_ls', 'pilot', 'derby', 'derby_style', 'hollywood'],
-                "SOB": ["marlboro advance", "Marlboro FF", "Marlboro Gold", "Navy", 'Sheikh FF', "Marise", "Castle", "Rally", "Real", "Winston Blue", "Winston Red", "LD", "Others"],
-                "required": true
+                "franchaise": "15",
+                "SOB": "16",
+                "required": true,
+            },
+            {
+                "id": 15,
+                "question": "franchaise",
+                "type": "dropdown",
+                "options": ['bnh_sf', 'bnh_bg', 'bnh_sw', 'bnh_p', 'jpgl', 'jpgl_sp', 'jpgl_sw', 'capstan', 'srft', 'star_next', 'royals_gold', 'royals_next', 'royals_ls', 'pilot', 'derby', 'derby_style', 'hollywood'],
+                "referTo": "9"
+            },
+            {
+                "id": 16,
+                "question": "SOB",
+                "type": "dropdown",
+                "options": ["marlboro advance", "Marlboro FF", "Marlboro Gold", "Navy", 'Sheikh FF', "Marise", "Castle", "Rally", "Real", "Winston Blue", "Winston Red", "LD", "Others"],
+                "referTo": "9"
             },
             {
                 "id": 9,
                 "question": "আপনি কতদিন যাবত এই ব্র্যান্ডটি ধূমপান করছেন? ?",
                 "type": "dropdown",
                 "options": ['Less than 6 Months', '6 Months to 1 year', '1 year to 2 years', '2+ years'],
-                "required": true
+                "required": true,
+                "referTo": "10"
             },
             {
                 "id": 10,
@@ -200,21 +222,24 @@ let demoSurvey = {
                 "question": "ভোক্তা কোন পিটিআর(PTR) গ্রহণ করেছেন?",
                 "type": "multipleChoice",
                 "options": ["Match Box", "Lighter"],
-                "required": true
+                "required": true,
+                "referTo": "12"
             },
             {
                 "id": 12,
                 "question": "ভোক্তা কি হাতঘড়ি পরেছেন ?",
                 "type": "multipleChoice",
                 "options": ["yes", "no"],
-                "required": true
+                "required": true,
+                "referTo": "13"
             },
             {
                 "id": 13,
                 "question": "ভোক্তা কি ধরনের জুতা পরিধান করেছেন ?",
                 "type": "dropdown",
                 "options": ["Shoes", "Sandals", "Slipper", "Barefoot"],
-                "required": true
+                "required": true,
+                "referTo": "14"
             },
             {
                 "id": 14,
