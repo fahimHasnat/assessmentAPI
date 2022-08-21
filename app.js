@@ -68,7 +68,7 @@ let survey = [
   {
     id: 4,
     question: "What should we be doing to solve this ?",
-    type: "Checkbox",
+    type: "checkbox",
     options: [
       { value: "Taka te pathor bedhe takar weight barano jay", referTo: 6 },
       {
